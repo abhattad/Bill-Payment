@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "b599d518-da1f-4ca9-84dd-4c5705d65fb5",
+		"name": "Bill-System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register Customer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"amit.bhattad1@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8091/customer/registration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"customer",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Credit Wallet",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "amount",
+						"value": "10000",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8091/customer/wallet/add?email=amit.bhattad11@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"customer",
+						"wallet",
+						"add"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "amit.bhattad11@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customer List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8091/customer/getlist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"customer",
+						"getlist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customer By Email",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8091/customer?email=amit.bhattad1@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"customer"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "amit.bhattad1@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Transaction",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8091/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Biller List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8091/biller/getbillers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"biller",
+						"getbillers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Biller By Id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8091/biller/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"biller",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PayBill",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "email",
+						"type": "text",
+						"value": "amit.bhattad1@gmail.com"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8091/biller/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"biller",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Biller",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "email",
+						"type": "text",
+						"value": "amit.bhattad@gmail.com",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" :\"HSBC Mutual Fund\",\r\n    \"month\": \"Jan\",\r\n    \"amount\":\"1080\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8091/biller/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"biller",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
